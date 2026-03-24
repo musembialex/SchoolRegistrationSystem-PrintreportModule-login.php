@@ -1,0 +1,110 @@
+<?php
+	include "database.php";
+	session_start();
+	if (!isset($_SESSION["AID"])) {
+		echo "<script>window.open('index.php?mes=Access Denied..','_self');</script>";
+		exit;
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Admin</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<?php include "navbar.php"; ?><br>
+
+	<div id="section">
+
+		<?php include "sidebar.php"; ?><br>
+
+		<div class="content">
+			<h3 class="text">Welcome <?php echo $_SESSION["ANAME"]; ?></h3><br><hr><br>
+
+			<!-- 🖨️ Print Report Button -->
+			<form action="print_report.php" method="post" target="_blank">
+				<button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+					🖨️ Print System Activity Report
+				</button>
+			</form><br>
+
+			<h3>School Information</h3><br>
+			<img src="img/g10.jpg" class="imgs">
+			<p class="para">
+				School Management System is a complete school management software designed to automate a school's 
+				diverse operations from classes, exams to school events calendar. 
+			</p>
+
+			<p class="para">
+				This school software has a powerful online community to bring parents, teachers and students
+				on a common interactive platform. It is a paperless office automation solution for today's modern schools. 
+				The School Management System provides the facility to carry out all day to day activities of the school.
+			</p>
+
+			<p class="para">
+				<font size="4">
+				🎓 1. <u><b>Key Objectives</b></u><br>
+				<ul type="circle">
+					<li>Simplify and automate the student registration process.</li>
+					<li>Maintain accurate and updated records of students.</li>
+					<li>Reduce administrative workload and human error.</li>
+					<li>Improve data security and access control.</li>
+				</ul><br>
+
+				🛠️ 2. <u><b>Core Modules & Features</b></u><br><br>
+				<ol type="a">
+					<li><u>User Management</u></li>
+					<ul type="circle">
+						<li>Admin Interface: Full control over system operations, user roles, and data access.</li>
+						<li>Student Interface: Login, and manage personal data.</li>
+						<li>Faculty Interface: View assigned classes, schedules, and manage grades.</li>
+					</ul>
+					<li><u>Student Registration</u></li>
+					<ul type="circle">
+						<li>Online registration for new students by staff.</li>
+						<li>Verification and approval workflow.</li>
+					</ul>
+					<li><u>Class Scheduling</u></li>
+					<ul type="circle">
+						<li>Classroom allocation based on capacity and availability.</li>
+						<li>Conflict detection and resolution.</li>
+					</ul>
+					<li><u>Communication Tools</u></li>
+					<ul type="circle">
+						<li>Email/SMS alerts for registration deadlines and approvals.</li>
+						<li>Notifications for schedule changes.</li>
+					</ul>
+				</ol><br>
+
+				✅ 3. <u><b>Benefits</b></u><br><br>
+				<ul type="circle">
+					<li>Time-saving: Automates manual, paper-based processes.</li>
+					<li>Transparency: Students and faculty can track registrations and updates in real-time.</li>
+					<li>Accuracy: Reduces data-entry errors.</li>
+					<li>Scalability: Can handle large volumes of students and courses.</li>
+				</ul><br>
+
+				⚠️ 4. <u><b>Challenges</b></u><br><br>
+				<ul type="circle">
+					<li>Initial setup and data migration.</li>
+					<li>Training staff and students on new systems.</li>
+					<li>Ensuring uptime and handling peak registration times.</li>
+					<li>Data privacy and compliance.</li>
+				</ul><br>
+
+				📘 5. <u><b>Optional Features</b></u><br><br>
+				<ul type="circle">
+					<li>Mobile apps for students and faculty.</li>
+					<li>Integration with academic calendar and exam systems.</li>
+				</ul>
+				</font>
+			</p>
+		</div>
+	</div>
+
+	<?php include "footer.php"; ?>
+</body>
+</html>
